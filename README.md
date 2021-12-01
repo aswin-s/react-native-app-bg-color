@@ -26,7 +26,7 @@ setBackgroundColor('#EC255A');
 
 ## Demo
 
-![demo]('https://github.com/aswin-s/react-native-app-bg-color/blob/master/images/background.gif?raw=true')
+![demo](https://github.com/aswin-s/react-native-app-bg-color/blob/master/images/background.gif?raw=true)
 
 ## Contributing
 
