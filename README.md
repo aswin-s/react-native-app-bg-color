@@ -1,6 +1,6 @@
 # react-native-app-bg-color
 
-Allows to set the app background color
+Allows you to change the root app background color from a react native view.
 
 ## Installation
 
@@ -8,14 +8,20 @@ Allows to set the app background color
 npm install react-native-app-bg-color
 ```
 
+or
+
+```sh
+yarn add react-native-app-bg-color
+```
+
 ## Usage
 
 ```js
-import { multiply } from "react-native-app-bg-color";
+import { setBackgroundColor } from 'react-native-app-bg-color';
 
 // ...
 
-const result = await multiply(3, 7);
+setBackgroundColor('#EC255A');
 ```
 
 ## Contributing
