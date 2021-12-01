@@ -1,6 +1,6 @@
 # react-native-app-bg-color
 
-Allows you to change the root app background color from a react native view.
+Allows you to change the root app background color from a react native view. Works for both iOS & Android 🎉.
 
 ## Installation
 
@@ -23,6 +23,10 @@ import { setBackgroundColor } from 'react-native-app-bg-color';
 
 setBackgroundColor('#EC255A');
 ```
+
+## Demo
+
+![demo]('./image/background.gif')
 
 ## Contributing
 

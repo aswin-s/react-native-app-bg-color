@@ -14,8 +14,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Result:</Text>
       <Button
+        color="black"
         onPress={() => setBackgroundColor(`#${genRanHex(6)}`)}
         title="Change Color"
       />
@@ -30,9 +30,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'transparent',
   },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+  button: {
+    backgroundColor: '#FFF',
+    borderWidth: 1,
+    borderColor: '#000',
   },
 });
