@@ -17,6 +17,6 @@ const AppBgColor = NativeModules.AppBgColor
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return AppBgColor.multiply(a, b);
+export function setBackgroundColor(color: string) {
+  return AppBgColor.setBackgroundColor(color);
 }

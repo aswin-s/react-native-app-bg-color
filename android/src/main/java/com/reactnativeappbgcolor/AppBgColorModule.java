@@ -1,6 +1,9 @@
 package com.reactnativeappbgcolor;
 
 import androidx.annotation.NonNull;
+import android.app.Activity;
+import android.view.View;
+import android.graphics.Color;
 
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -23,12 +26,22 @@ public class AppBgColorModule extends ReactContextBaseJavaModule {
     }
 
 
-    // Example method
-    // See https://reactnative.dev/docs/native-modules-android
     @ReactMethod
-    public void multiply(int a, int b, Promise promise) {
-        promise.resolve(a * b);
+    public void setBackgroundColor(String color) {
+        final Activity activity = getCurrentActivity();
+
+        if (activity == null) {
+            return;
+        }
+
+        activity.runOnUiThread(new Runnable() {
+        @Override
+        public void run() {
+            View view = activity.getWindow().getDecorView();
+            int parsedColor = Color.parseColor(color);
+            view.getRootView().setBackgroundColor(parsedColor);
+        }});
     }
 
-    public static native int nativeMultiply(int a, int b);
+    
 }

@@ -1,18 +1,24 @@
 import * as React from 'react';
-
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-app-bg-color';
+import { StyleSheet, View, Text, Button } from 'react-native';
+import { setBackgroundColor } from 'react-native-app-bg-color';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const genRanHex = (size: number) =>
+    [...Array(size)]
+      .map(() => Math.floor(Math.random() * 16).toString(16))
+      .join('');
 
   React.useEffect(() => {
-    multiply(3, 7).then(setResult);
+    setBackgroundColor(`#${genRanHex(6)}`);
   }, []);
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>Result:</Text>
+      <Button
+        onPress={() => setBackgroundColor(`#${genRanHex(6)}`)}
+        title="Change Color"
+      />
     </View>
   );
 }
@@ -22,6 +28,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: 'transparent',
   },
   box: {
     width: 60,
