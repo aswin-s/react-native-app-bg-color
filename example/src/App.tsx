@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { StyleSheet, View, Button } from 'react-native';
-import { setBackgroundColor } from 'react-native-app-bg-color';
+import {
+  setBackgroundColor,
+  getBackgroundColor,
+} from 'react-native-app-bg-color';
 
 export default function App() {
   const genRanHex = (size: number) =>
@@ -18,6 +21,14 @@ export default function App() {
         color="black"
         onPress={() => setBackgroundColor(`#${genRanHex(6)}`)}
         title="Change Color"
+      />
+
+      <Button
+        color="black"
+        onPress={() =>
+          getBackgroundColor((color: string) => console.log(color))
+        }
+        title="Get Color"
       />
     </View>
   );

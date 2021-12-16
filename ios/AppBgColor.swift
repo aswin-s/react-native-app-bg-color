@@ -1,6 +1,8 @@
 @objc(AppBgColor)
 class AppBgColor: NSObject {
     
+    var bgColor:String = "#FFFFFF"
+    
     @objc static func requiresMainQueueSetup() -> Bool {
         return false
     }
@@ -12,9 +14,15 @@ class AppBgColor: NSObject {
         }
     }
     
+    @objc(getBackgroundColor:)
+    func getBackgroundColor(callback: RCTResponseSenderBlock) {
+      callback([bgColor])
+    }
+    
+    
     func _setBgColor(color:String) -> Void {
+        bgColor=color
         let backgroundColor = hexStringToUIColor(hex: color)
-        
         if let rootViewController = UIApplication.shared.windows.first!.rootViewController {
             rootViewController.view.backgroundColor = backgroundColor
         }

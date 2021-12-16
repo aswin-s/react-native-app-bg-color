@@ -20,3 +20,7 @@ const AppBgColor = NativeModules.AppBgColor
 export function setBackgroundColor(color: string) {
   return AppBgColor.setBackgroundColor(color);
 }
+
+export function getBackgroundColor(callback: (color: string) => void) {
+  return AppBgColor.getBackgroundColor(callback);
+}
